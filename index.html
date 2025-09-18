@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie Explorer - Busca de Filmes e Séries</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎥</text></svg>">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Movie Explorer</h1>
+    <p>Descubra filmes e séries com facilidade</p>
+  </header>
+  <main>
+    <section class="search-section" aria-label="Busca de filmes e séries">
+      <form id="search-form" class="search-form" role="search" aria-describedby="search-desc">
+        <label for="search-input" id="search-desc" class="visually-hidden">Digite o nome do filme ou série</label>
+        <input
+          type="search"
+          id="search-input"
+          name="search"
+          placeholder="Digite o nome do filme ou série..."
+          autocomplete="off"
+          required
+          aria-required="true"
+        />
+        <button type="submit" id="search-btn" aria-label="Buscar filmes e séries">Buscar</button>
+      </form>
+    </section>
+    <div id="loading" class="loading hidden" role="status" aria-live="polite">Carregando...</div>
+    <section id="results" class="results" aria-live="polite" aria-atomic="true"></section>
+    <div id="error" class="error hidden" role="alert"></div>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+    <div class="modal-content" role="document">
+      <button id="close-modal" class="close" aria-label="Fechar modal">&times;</button>
+      <div id="movie-details"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
